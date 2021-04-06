@@ -1,0 +1,23 @@
+<!--
+#register.html
+20210205
+-->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Register now</h1>
+  <head>
+    <title>reCAPTCHA demo: Simple page</title>
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </head>
+  <br>
+  <div class="row">
+  	<div class="col-md-6">
+  		{% import 'bootstrap/wtf.html' as wtf %}
+  		{{wtf.quick_form(form)}}
+  		{{form.csrf_token}}
+  		<br>
+  		{{form.submit}}
+  	</div>	
+  	</div>
+{% endblock %}

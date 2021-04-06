@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>顯示所有分享物品</title>
+{%endblock %}
+
+{% block content %}
+<h1>所有分享物品</h1>
+
+<table border='1' cellsapcing='0' cellpadding='0' >
+ <tr>
+      <th>thingsid</th>
+      <th>分享者</th>
+      <th>物品名稱</th>
+      <th>數量</th>
+      <th>情況</th>
+      <th>類別</th>
+      <th>狀態</th>
+      <th>分享日期</th>
+      <th>照片</th>
+      <th><p><a href="/iwantdb">...</a></p> </th>
+      <th>我需要</p></th>
+
+      <th>修改</th>
+      <th>刪除</th>
+    </tr>
+
+{% for row in things %}
+<tr>
+  <td>{{ row[0] }}</td>
+  <td>{{ row[1] }}</td>
+  <td>{{ row[2] }}</td>
+  <td>{{ row[4] }}</td>
+  <td>{{ row[5] }}</td>
+  <td>{{ row[3] }}</td>
+  <td>{{ row[7] }}</td>
+  <td>{{ row[6] }}</td>
+<!--<td>{{ things.thingid }}</td>
+<td>{{ things.giver_numeber }}</td>
+<td>{{ things.thingname }}</td>
+<td>{{ things.groupn }}</td>
+<td>{{ things.vols }}</td>
+<td>{{ things.coment }}</td>
+<td>{{ things.status }}</td>-->
+                  
+
+<td><a href='/edit/?id={{things.id}}'>編輯</a></td>
+<td><a href='/del/?id={{things.id}}'>刪除</a></td>
+</tr>
+{% endfor %}
+
+</table>
+<p style="color: magenta">{{message01}}</p>
+
+
+
+        <!-- 搜索功能-->
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form" method="get" action="/search_name/">
+            <div class="form-group">
+              <input name="name" type="text" placeholder="物品名稱或編號" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">搜索</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+      
+{%endblock%}
+
+
+
+
+
+
+

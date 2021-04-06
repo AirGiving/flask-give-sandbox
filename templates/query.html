@@ -1,0 +1,77 @@
+<!--檔案名稱:query.html-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Flask單筆NAME查詢</title>
+</head>
+   <body>
+    <h3>学生信息 - Flask SQLAlchemyFlask單筆NAME查詢</h3>
+      <hr/>
+
+      {%- for category, message in get_flashed_messages(with_categories = true) %}
+         <div class = "alert alert-danger">
+            {{ message }}
+         </div>
+      {%- endfor %}
+
+      <form action = "http://localhost:5000/query" method = "post">
+         <label for = "name">姓名</label><br>
+         <input type = "text" name = "name" placeholder = "Name" /><br>
+       <!-- {{ request.path }}
+         <label for = "email">城市</label><br>
+         <input type = "text" name = "city" placeholder = "city" /><br>
+         
+         <label for = "addr">地址</label><br>
+         <input type = "text" name = "addr" placeholder = "addr"/><br>
+         
+         <label for = "pin">郵編</label><br>
+         <input type = "text" name = "pin" placeholder = "pin" /><br>
+        -->
+         <input type = "submit" value = "提交" /></br>
+      </form>
+
+
+
+       <hr/>
+      {%- for message in get_flashed_messages() %}
+         {{ message }}
+      {%- endfor %}
+
+<table>
+         <thead>
+            <tr>
+               <th>姓名</th>
+               <th>城市</th>
+               <th>地址</th>
+               <th>郵編</th>
+            </tr>
+         </thead>
+         <!--
+         <tbody>
+          
+            {% for student in students %}
+               <tr>
+                  <td>{{ student.name }}</td>
+                  <td>{{ student.city }}</td>
+                  <td>{{ student.addr }}</td>
+                  <td>{{ student.pin }}</td>
+               </tr>
+            {% endfor %}
+         
+         </tbody>
+         -->
+          <tbody>
+            {% for row in rows %}
+               <tr>
+                  <td>{{ row[name] }}</td>
+                  <td>{{ student.city }}</td>
+                  <td>{{ student.addr }}</td>
+                  <td>{{ student.pin }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+
+
+   </body>
+</html>

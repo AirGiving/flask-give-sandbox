@@ -1,0 +1,48 @@
+<!--
+# -*- coding: UTF-8 -*-
+#python give02db_member.py 在give02db資料庫與members資料表
+
+
+import sqlite3
+conn=sqlite3.connect("pygive01db.db")#建立資料庫
+cursor = conn.cursor()
+sql = '''Create table members(  
+
+
+cursor.execute(sql)                     # 執行SQL指令
+cursor.close()      
+conn.close()
+-->
+{% block navbar %}
+    {% include 'navbar.html' %}
+    {% endblock %}
+<html>
+<head></head>
+<body>
+<p>請輸入會員基本資料</p>
+<form method="get" action="/member_db/">
+<p>number:<input type="text" name="number"></p>
+<p>id:<input type="text" name="id"></p>
+<p>firstname:<input type="text" name="firstname"></p>
+<p>lastname:<input type="text" name="lastname"></p>
+<p>sexy:<input type="text" name="sexy"></p>
+<p>birsdata:<input type="text" name="birsdata"></p>
+<p>tel:<input type="text" name="tel"></p>
+<p>phone:<input type="text" name="phone"></p>
+<p>mail:<input type="text" name="mail"></p>
+<p>address1:<input type="text" name="address1"></p>
+<p>address2:<input type="text" name="address2"></p>
+<p>webadress:<input type="text" name="webadress"></p>
+<p>coment:<input type="text" name="coment"></p>
+<p>statusa:<input type="text" name="statusa"></p>
+<p>statusb:<input type="text" name="statusb"></p>
+<p>gender:<input type="text" name="gender"></p>
+
+
+<p>number:<input type="submit" name="button" value="送出"></p>
+
+</form>
+
+
+</body>
+</html>

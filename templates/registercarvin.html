@@ -1,0 +1,20 @@
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
+<p >歡迎來到會員申請註冊專區</p>
+<p>請輸入基本資料</p>
+
+
+
+<body style="background-color: white">
+     <form method="POST" action="/writeindb">
+         <input type="String" placeholder="請輸入姓名:" name="username">
+         <input type="String" placeholder="請輸入email:" name="email">
+         <input type="String" placeholder="請輸入phone:" name="phone">
+         <input type="String" placeholder="請輸入password:" name="password">
+         <!--now() type="DateTime"  name="date">-->
+         <p>要自動帶入系統日期</p>
+         <button type="submit">Submit</button>
+     </form>
+
+</body>

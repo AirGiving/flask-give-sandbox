@@ -1,0 +1,39 @@
+<!--
+# -*- coding: UTF-8 -*-
+#things_form.html 在give02db資料庫與users與things資料表
+
+
+import sqlite3
+conn=sqlite3.connect("give02db.db")#建立資料庫
+cursor = conn.cursor()
+sql = '''Create table things(  
+
+
+cursor.execute(sql)                     # 執行SQL指令
+cursor.close()      
+conn.close()
+-->
+{% block navbar %}
+    {% include 'navbar.html' %}
+    {% endblock %}
+<html>
+<head></head>
+<body>
+<p>請輸入想分享贈出之物品(things)的資料</p>
+<form method="POST" action="/thingsinto_db">
+<p>thingsid:<input type="int" name="thingsid">系統自動產生免填(待修)</p>
+<p>giver_number:<input type="int" name="giver_number"></p>
+<p>thingname:<input type="text" name="thingname"></p>
+<p>groupn:<input type="text" name="groupn"></p>
+<p>vols:<input type="int" name="vols"></p>
+<p>coment:<input type="text" name="coment"></p>
+<p>date:<input type="datetime" name="date"></p>
+<p>status:<input type="text" name="status"></p>
+<p>potoaddress:<input type="text" name="potoaddress"></p>
+<p>number:<input type="submit" name="button" value="送出"></p>
+
+</form>
+
+
+</body>
+</html>

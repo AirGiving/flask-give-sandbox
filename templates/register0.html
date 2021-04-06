@@ -1,0 +1,11 @@
+<!--register.html #說明：建立Html_設置使用者註冊需求的網頁，繼承flask-bootstrap的base.html以及macro(wtf.html)建置。-->
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Reister Page{% endblock title %}
+{% block content %}
+<div class="container">
+    <h1>Register Your Account請註冊</h1>
+    <h2>Welcome To igiveweb</h2>
+    {{ wtf.quick_form(form) }}
+</div>    
+{% endblock content%}

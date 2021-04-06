@@ -1,0 +1,37 @@
+<!--
+# -*- coding: UTF-8 -*-
+#things_histories_form.html 在give02db資料庫與users與things資料表
+
+
+import sqlite3
+conn=sqlite3.connect("give02db.db")#建立資料庫
+cursor = conn.cursor()
+sql = '''Create table things(  
+
+
+cursor.execute(sql)                     # 執行SQL指令
+cursor.close()      
+conn.close()
+-->
+{% block navbar %}
+    {% include 'navbar.html' %}
+    {% endblock %}
+<html>
+<head></head>
+<body>
+<p>請輸入您對想要得到的物品(things)的想法</p>
+<form method="POST" action="/things_histories_db">
+<p>sirenumber:<input type="int" name="sirenumber">系統自動產生免填(待修)</p>
+<p>thingid:<input type="int" name="thingid"></p>
+<p>coment:<input type="text" name="coment"></p>
+<p>status:<input type="text" name="status"></p>
+<p>dostausmen_number:<input type="int" name="dostausmen_number"></p>
+<p>time:<input type="datetime" name="time"></p>
+
+<p>確認:<input type="submit" name="button" value="送出"></p>
+
+</form>
+
+
+</body>
+</html>

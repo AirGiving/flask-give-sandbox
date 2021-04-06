@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}This is an example page{% endblock %}
+
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
+
+{% block content %}
+  <h1>Hello, Bootstrap in index.html</h1>
+  <ul class = 'nav navbar-nav navbar-right'>
+    <li class="{% if request.endpoint == 'register' %} active {% endif %}"></li></ul>
+    <a href ="{{url_for('register')}}">register</a>
+{% endblock %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="zh-TW" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>練習網頁首頁</title>
+</head>
+<body>
+    <p></p>
+    <p>My<b>new</b> and <i>improved</i> home page!!!</p>
+    <p></p>
+    <p>Say hello to my little friend:{{thing}}.
+        Alas,it just destroyed {{place}}!</p>
+<p>
+<li><a href="https://acupun.site/lecture/django/index.htm#chp5">陳擎文教學網</a></li>
+<li><a href="https://www.csie.ntu.edu.tw/~r91112/myDownload/WEB/html.html">HTML格式</a></li>
+</p>
+<form method="get" action="/member_form">
+         <button type="submit">使用者資料登錄建檔</button>
+     </form>
+<form method="get" action="/mainlogin">
+         <button type="submit">user登錄建檔</button>
+     </form>
+
+<table width="700" border="1">
+共創群組網頁建置carvin.python語言開發網站
+***請在此區域編輯文字WWW==index.html******
+
+<p>
+目前的路徑"D:\pyweb\guest\sign\templates\index.html"
+</p>
+根據python Web介面開發與自動化測試一書(蟲師)(蜝峰出版)操作
+<div><p>工作日誌:</p>
+110.1.19(二)上午10:30到林口公司上課
+
+110.2.23~26上午8:30前到達忠孝西路一段50號18樓之4\n要帶2吋相片及身分證影本
+</div>
+
+<p>
+加油!不要放棄!忘記背後努力面前!  
+</p>
+<table width="700" border="1">
+  <link rel="icon" href="{{ url_for('static', filename='img/alpaca_logo.ipeg') }}">
+python語言開發練習網站
+<p style="color: block">Hello {{ Name }}!</p>
+</body>
+</html>
+
